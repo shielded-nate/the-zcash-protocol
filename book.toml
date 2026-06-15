@@ -1,0 +1,7 @@
+[book]
+title = "The (Aspirational, Unofficial, Incomplete) Zcash Protocol Book"
+language = "en"
+src = "src"
+
+[build]
+build-dir = "book"
