@@ -1,7 +1,6 @@
 [book]
 title = "The (Aspirational, Unofficial, Incomplete) Zcash Protocol Book"
 language = "en"
-multilingual = false
 src = "src"
 
 [build]
