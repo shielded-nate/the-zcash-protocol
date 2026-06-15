@@ -80,5 +80,3 @@ The terms below are to be interpreted as follows:
 [^protocol]: [Zcash Protocol Specification, Version 2025.6.3 [NU6.1] or later](protocol/protocol.pdf)
 
 [^protocol-blockchain]: [Zcash Protocol Specification, Version 2025.6.3 [NU6.1]. Section 3.3: The Block Chain](protocol/protocol.pdf#blockchain)
-
-[^protocol]: [Zcash Protocol Specification, Version 2025.6.3 [NU6.1]. Section 3.12: Mainnet and Testnet](protocol/protocol.pdf#networks)

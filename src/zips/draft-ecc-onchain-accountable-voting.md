@@ -171,3 +171,7 @@ Thank you to Josh Swihart and Kris Nuttycombe for discussions about [^draft-ecc-
 [^uri-utf8]: [RFC 3986: Uniform Resource Identifier (URI). Section 2.5: Identifying Data](https://www.rfc-editor.org/rfc/rfc3986.html#section-2.5)
 
 [^wikipedia-performative-utterance]: [Wikipedia: Performative utterance](https://en.wikipedia.org/wiki/Performative_utterance)
+
+<!-- mdbook-footnote-refs -->
+
+[^protocol]
