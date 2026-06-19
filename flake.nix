@@ -22,7 +22,12 @@
           buildPhase = ''
             runHook preBuild
             mkdir -p "$out"
-            mdbook build --dest-dir "$out"
+            mdbook_stderr="$(mktemp)"
+            mdbook build --dest-dir "$out" 2> >(tee "$mdbook_stderr" >&2)
+            if grep -q '\[WARN\]' "$mdbook_stderr"; then
+              echo "mdbook emitted warnings; failing build."
+              exit 1
+            fi
             runHook postBuild
           '';
 
