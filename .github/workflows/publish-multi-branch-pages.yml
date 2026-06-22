@@ -16,5 +16,10 @@ jobs:
     uses: shielded-nate/multi-branch-pages/.github/workflows/publish-multi-branch-pages.yml@main
     with:
       branch_whitelist: "*"
-      render_command: nix build
+      render_command: |
+        if ! command -v nix >/dev/null 2>&1; then
+          sh <(curl -L https://nixos.org/nix/install) --no-daemon
+          . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+        fi
+        nix build
       render_output_dir: result/.
