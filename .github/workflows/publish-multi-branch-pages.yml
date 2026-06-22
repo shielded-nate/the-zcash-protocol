@@ -1,0 +1,26 @@
+name: Publish multi-branch docs
+
+on:
+  push:
+    branches:
+      - "**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  call_action:
+    uses: shielded-nate/multi-branch-pages/.github/workflows/publish-multi-branch-pages.yml@main
+    with:
+      branch_whitelist: "*"
+      render_command: |
+        if ! command -v nix >/dev/null 2>&1; then
+          sh <(curl -fsSL https://nixos.org/nix/install) --no-daemon --no-channel-add
+          . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+        fi
+        export NIX_CONFIG=$'experimental-features = nix-command flakes\naccept-flake-config = true\n'
+        nix --extra-experimental-features 'nix-command flakes' build
+      render_output_dir: result/.
